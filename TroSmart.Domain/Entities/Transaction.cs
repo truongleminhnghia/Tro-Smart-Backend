@@ -1,7 +1,7 @@
 
 namespace TroSmart.Domain.Entities
 {
-    public class Transcation : BaseEntity
+    public class Transaction : BaseEntity
     {
         public Guid Id { get; set; }
     }

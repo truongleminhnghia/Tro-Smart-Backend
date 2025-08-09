@@ -32,7 +32,7 @@ namespace TroSmart.Infrastructure.Persistence.Context
         public DbSet<Review> Reviews { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Subscription> Subscriptions { get; set; }
-        public DbSet<Transcation> Transcations { get; set; }
+        public DbSet<Transaction> Transactions { get; set; }
         public DbSet<Voucher> Vouchers { get; set; }
         public DbSet<VoucherTranscation> VoucherTranscations { get; set; }
         public DbSet<VoucherUser> VoucherUsers { get; set; }
