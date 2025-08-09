@@ -1,7 +1,10 @@
 
+using TroSmart.Infrastructure.Persistence.Context;
 using TroSmart.WebAPI.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<TroSmartDbContext>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

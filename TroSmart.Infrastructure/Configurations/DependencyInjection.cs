@@ -37,8 +37,8 @@ namespace TroSmart.Infrastructure.Configurations
             services.AddScoped<ISubscriptionRepository, SubscriptionRepository>();
             services.AddScoped<ITransactionRepository, TranscationRepository>();
             services.AddScoped<IVoucherRepository, VoucherRepository>();
-            services.AddScoped<IVoucherTranscationRepository, IVoucherTranscationRepository>();
-            services.AddScoped<IVoucherUserRepository, IVoucherUserRepository>();
+            services.AddScoped<IVoucherTranscationRepository, VoucherTranscationRepository>();
+            services.AddScoped<IVoucherUserRepository, VoucherUserRepository>();
             return services;
         }
     }

@@ -42,5 +42,46 @@ namespace TroSmart.Infrastructure.Persistence.Context
         {
             modelBuilder.ApplyConfiguration(new AccountConfiguration());
         }
+
+        private static readonly TimeZoneInfo _vnZone =
+        TimeZoneInfo.FindSystemTimeZoneById("SE Asia Standard Time");
+
+        private DateTime GetCurrentVnTime()
+        {
+            return TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, _vnZone);
+        }
+
+        public override int SaveChanges()
+        {
+            ApplyTimestamps();
+            return base.SaveChanges();
+        }
+
+        private void ApplyTimestamps()
+        {
+            DateTime now = GetCurrentVnTime();
+
+            foreach (var entry in ChangeTracker.Entries<BaseEntity>())
+            {
+                if (entry.State == EntityState.Added)
+                {
+                    entry.Entity.CreatedAt = now;
+                    entry.Entity.UpdatedAt = now;
+                }
+                else if (entry.State == EntityState.Modified)
+                {
+                    entry.Property(x => x.CreatedAt).IsModified = false;
+                    entry.Entity.UpdatedAt = now;
+                }
+            }
+        }
+
+        public override Task<int> SaveChangesAsync(
+            bool acceptAllChangesOnSuccess,
+            CancellationToken cancellationToken = default)
+        {
+            ApplyTimestamps();
+            return base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
+        }
     }
 }

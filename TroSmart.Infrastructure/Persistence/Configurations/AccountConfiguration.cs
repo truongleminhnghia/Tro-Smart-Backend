@@ -18,7 +18,7 @@ namespace TroSmart.Infrastructure.Persistence.Configurations
 
             builder.Property(a => a.CreatedAt)
                 .HasColumnName("created_at");
-            builder.Property(a => a.UpdateddAt)
+            builder.Property(a => a.UpdatedAt)
                 .HasColumnName("updated_at");
         }
     }
