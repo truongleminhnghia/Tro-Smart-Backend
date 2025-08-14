@@ -13,49 +13,6 @@ namespace TroSmart.Infrastructure.Persistence
         {
             _context = context;
         }
-        public IAccountRepository Accounts => throw new NotImplementedException();
-
-        public IRoleRepository Roles => throw new NotImplementedException();
-
-        public IAddressRepository Address => throw new NotImplementedException();
-
-        public IAttentionRepository Attentions => throw new NotImplementedException();
-
-        public IBookingRepository Bookings => throw new NotImplementedException();
-
-        public IConversationRepository Conversations => throw new NotImplementedException();
-
-        public IConversationMemberRepository ConversationMembers => throw new NotImplementedException();
-
-        public ICustomerRepository Customers => throw new NotImplementedException();
-
-        public IEmployeeRepository Employees => throw new NotImplementedException();
-
-        public IHistoryRepository Histories => throw new NotImplementedException();
-
-        public IImageRepository Images => throw new NotImplementedException();
-
-        public IListingRepository Listings => throw new NotImplementedException();
-
-        public IMessageRepository Messages => throw new NotImplementedException();
-
-        public IPackageRepository Packages => throw new NotImplementedException();
-
-        public IPaymentRepository Payments => throw new NotImplementedException();
-
-        public IPropertyRepository Properties => throw new NotImplementedException();
-
-        public IReviewRepository Reviews => throw new NotImplementedException();
-
-        public ISubscriptionRepository Subscriptions => throw new NotImplementedException();
-
-        public ITransactionRepository Transactions => throw new NotImplementedException();
-
-        public IVoucherRepository Vouchers => throw new NotImplementedException();
-
-        public IVoucherTranscationRepository VoucherTranscations => throw new NotImplementedException();
-
-        public IVoucherUserRepository VoucherUsers => throw new NotImplementedException();
 
         // SaveChangesWithTransaction đồng bộ
         public async Task<int> SaveChangesAsync()
